@@ -1,47 +1,41 @@
 extends CharacterBody2D
 
-const SPEED = 150.0
-const RUN_SPEED = 200.0 
+const SPEED = 100.0
 const JUMP_VELOCITY = -400.0
-
-var direction : float = 0.0
-
+var direction : Vector2 = Vector2.ZERO
 @onready var animation_tree : AnimationTree = $Animetree
 @onready var sprite : AnimatedSprite2D = $Anime
 
 func _ready():
 	animation_tree.active = true
 
+	
+
 func _physics_process(delta: float) -> void:
-	# Adiciona Gravidade
-	if not is_on_floor(): # se nao tiver no chao
-		velocity.y += get_gravity().y * delta # incrementa o valor da gravidada na velocidade em y
+	# Add the gravity
+	if not is_on_floor():
+		velocity += get_gravity() * delta
 
 	# Handle jump.
-	if Input.is_action_just_pressed("jump") and is_on_floor():
+	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 
-	direction = Input.get_axis("move_left", "move_right")
-	
-	var current_speed = SPEED
-	
-	if Input.is_action_pressed("run") and is_on_floor():
-		current_speed = RUN_SPEED
-		
+	# Get the input direction and handle the movement/deceleration.
+	# As good practice, you should replace UI actions with custom gameplay actions.
+	direction = Input.get_vector("ui_left","ui_right","ui_down","ui_up")
 	if direction:
-		velocity.x = direction * current_speed
+		velocity.x = direction.x * SPEED
 	else:
-		velocity.x = 0.0
-		
+		velocity.x = move_toward(velocity.x, 0, SPEED)
+
 	move_and_slide()
-	
 	update_direction()
 	update_animation()
 	
 func update_direction():
-	if direction > 0:
+	if direction.x > 0:
 		sprite.flip_h = false
-	elif direction < 0:
+	if direction.x < 0:
 		sprite.flip_h = true
 func update_animation():
-	animation_tree.set("parameters/move/blend_position",direction)
+	animation_tree.set("parameters/move/blend_position",direction.x)

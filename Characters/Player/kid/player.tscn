@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://cuih0po4sydxx"]
+[gd_scene load_steps=30 format=3 uid="uid://cuih0po4sydxx"]
 
 [ext_resource type="Script" uid="uid://d3w4svfesd1hr" path="res://Characters/Player/kid/character_body_2d.gd" id="1_0dupx"]
 [ext_resource type="Texture2D" uid="uid://c2kmp88g0gel5" path="res://Characters/Player/kid/idle/kid_idle0001.png" id="2_hvskx"]
@@ -16,12 +16,6 @@
 [ext_resource type="Texture2D" uid="uid://b1g5qasmblhkr" path="res://Characters/Player/kid/idle/kid_idle0009.png" id="10_rcmf2"]
 [ext_resource type="Texture2D" uid="uid://c60qkn2u2h4tj" path="res://Characters/Player/kid/idle/kid_idle0010.png" id="11_d2djq"]
 [ext_resource type="Texture2D" uid="uid://c6iwyvjxfgbpa" path="res://Characters/Player/kid/idle/kid_idle0011.png" id="12_m246n"]
-[ext_resource type="Texture2D" uid="uid://bpl6vy47nohr1" path="res://Characters/Player/kid/run/kid_run0001.png" id="13_wvq0d"]
-[ext_resource type="Texture2D" uid="uid://dqpmlpuoqs4hu" path="res://Characters/Player/kid/run/kid_run0002.png" id="14_rcmf2"]
-[ext_resource type="Texture2D" uid="uid://t5e0bovkrtjb" path="res://Characters/Player/kid/run/kid_run0003.png" id="15_d2djq"]
-[ext_resource type="Texture2D" uid="uid://b1mpuh5igg24r" path="res://Characters/Player/kid/run/kid_run0004.png" id="16_m246n"]
-[ext_resource type="Texture2D" uid="uid://12rouonbihjx" path="res://Characters/Player/kid/run/kid_run0005.png" id="17_e2h6n"]
-[ext_resource type="Texture2D" uid="uid://bgxt17sfry2vx" path="res://Characters/Player/kid/run/kid_run0006.png" id="18_4b2hl"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qhb0c"]
 height = 42.0
@@ -200,29 +194,6 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("13_wvq0d")
-}, {
-"duration": 1.0,
-"texture": ExtResource("14_rcmf2")
-}, {
-"duration": 1.0,
-"texture": ExtResource("15_d2djq")
-}, {
-"duration": 1.0,
-"texture": ExtResource("16_m246n")
-}, {
-"duration": 1.0,
-"texture": ExtResource("17_e2h6n")
-}, {
-"duration": 1.0,
-"texture": ExtResource("18_4b2hl")
-}],
-"loop": true,
-"name": &"run",
 "speed": 5.0
 }, {
 "frames": [{

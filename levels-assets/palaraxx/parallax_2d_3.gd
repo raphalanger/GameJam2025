@@ -1,4 +1,4 @@
-extends Node2D
+extends 
 
 @export var speed: Vector2 = Vector2(-50, 0) 
 

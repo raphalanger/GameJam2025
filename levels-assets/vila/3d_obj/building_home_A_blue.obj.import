@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://65hy5sj48o3u"
+path="res://.godot/imported/building_home_A_blue.obj-61e11ec0154f0abd2e10963bae3aebcc.mesh"
+
+[deps]
+
+files=["res://.godot/imported/building_home_A_blue.obj-61e11ec0154f0abd2e10963bae3aebcc.mesh"]
+
+source_file="res://levels-assets/vila/3d_obj/building_home_A_blue.obj"
+dest_files=["res://.godot/imported/building_home_A_blue.obj-61e11ec0154f0abd2e10963bae3aebcc.mesh", "res://.godot/imported/building_home_A_blue.obj-61e11ec0154f0abd2e10963bae3aebcc.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

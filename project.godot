@@ -15,13 +15,13 @@ ss2d/version="3.3.0"
 [application]
 
 config/name="Peace and Love"
-run/main_scene="uid://c85oatttj4a6l"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
+PhantomCameraManager="*res://addons/phantom_camera/scripts/managers/phantom_camera_manager.gd"
 
 [dialogic]
 
@@ -37,7 +37,11 @@ window/stretch/mode="canvas_items"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/dialogic/plugin.cfg", "res://addons/terrain_3d/plugin.cfg")
+enabled=PackedStringArray("res://addons/dialogic/plugin.cfg", "res://addons/phantom_camera/plugin.cfg", "res://addons/rmsmartshape/plugin.cfg")
+
+[global_group]
+
+player=""
 
 [input]
 

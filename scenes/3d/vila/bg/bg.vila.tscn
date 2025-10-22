@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://c4608jfjtksxy"]
+
+[ext_resource type="Texture2D" uid="uid://cw0hilxxtabm7" path="res://levels-assets/vila/bg/Sky.png" id="1_f1326"]
+[ext_resource type="Texture2D" uid="uid://dmtpr7axxow50" path="res://levels-assets/vila/bg/BG_Decor.png" id="2_7w2q5"]
+
+[node name="Bg_vila" type="Node2D"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(1260, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(619, 539)
+texture = ExtResource("1_f1326")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(1260, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2(627, 539)
+texture = ExtResource("2_7w2q5")

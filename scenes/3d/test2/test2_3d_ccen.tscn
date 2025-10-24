@@ -1,9 +1,9 @@
 [gd_scene load_steps=16 format=4 uid="uid://bjtdnxy2tgrwg"]
 
-[ext_resource type="Texture2D" uid="uid://cgwailcqjjvgx" path="res://levels-assets/test/3d/Colorsheet Tree Normal.png" id="1_hvslh"]
+[ext_resource type="Texture2D" uid="uid://cgwailcqjjvgx" path="res://levels-assets/startarea/Colorsheet Tree Normal.png" id="1_hvslh"]
 [ext_resource type="PackedScene" uid="uid://1xm4d6824lgg" path="res://scenes/2d/test2/test2.tscn" id="1_pxhye"]
 [ext_resource type="Texture2D" uid="uid://dbridh04wksen" path="res://levels-assets/test/back/2.png" id="3_a750g"]
-[ext_resource type="PackedScene" uid="uid://bl83ksaet7hsd" path="res://levels-assets/palaraxx/paralax.tscn" id="4_ftjsq"]
+[ext_resource type="PackedScene" uid="uid://bl83ksaet7hsd" path="res://scenes/2d/vila/paralax.tscn" id="4_ftjsq"]
 [ext_resource type="Texture2D" uid="uid://ykhlonrs35bw" path="res://levels-assets/test/back/8.png" id="5_x5tts"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_5wbjs"]

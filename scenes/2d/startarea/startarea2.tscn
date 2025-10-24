@@ -1,0 +1,154 @@
+[gd_scene load_steps=26 format=4 uid="uid://bpwtcwenhv4a6"]
+
+[ext_resource type="PackedScene" uid="uid://cuih0po4sydxx" path="res://Characters/Player/kid/player.tscn" id="1_nhgac"]
+[ext_resource type="Script" uid="uid://bhexx6mj1xv3q" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="2_08f32"]
+[ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="3_4tt3s"]
+[ext_resource type="Script" uid="uid://dhdc4b8yddyej" path="res://addons/rmsmartshape/shapes/shape.gd" id="4_3f72n"]
+[ext_resource type="Script" uid="uid://bwcf4pjgprn0k" path="res://addons/rmsmartshape/shapes/point.gd" id="5_b4il4"]
+[ext_resource type="Script" uid="uid://bo5f7qe27jfje" path="res://addons/rmsmartshape/shapes/point_array.gd" id="6_rvcfa"]
+[ext_resource type="Script" uid="uid://llobjh5hvry" path="res://addons/rmsmartshape/shapes/mesh.gd" id="7_xo3yk"]
+[ext_resource type="Texture2D" uid="uid://sh8qptfjb30b" path="res://levels-assets/vila/test.png" id="8_ektjc"]
+[ext_resource type="Script" uid="uid://0lhxan4cqrc1" path="res://addons/rmsmartshape/materials/edge_material_metadata.gd" id="9_n2v0h"]
+[ext_resource type="Script" uid="uid://nc5bfedvnpgm" path="res://addons/rmsmartshape/materials/shape_material.gd" id="10_lccif"]
+[ext_resource type="Texture2D" uid="uid://csywbvwpopdjp" path="res://levels-assets/vila/bg/Ground.png" id="11_gm00y"]
+[ext_resource type="Script" uid="uid://pl0lgs6qv5dv" path="res://scenes/2d/test1/area_2d.gd" id="12_ahj06"]
+[ext_resource type="Texture2D" uid="uid://7x2dfltuqd1e" path="res://levels-assets/vila/bg/Foreground.png" id="13_htcqv"]
+
+[sub_resource type="Resource" id="Resource_a3qjn"]
+script = ExtResource("3_4tt3s")
+
+[sub_resource type="Resource" id="Resource_60ktv"]
+script = ExtResource("5_b4il4")
+position = Vector2(-1107.3411, 501.4945)
+
+[sub_resource type="Resource" id="Resource_ftkmv"]
+script = ExtResource("5_b4il4")
+position = Vector2(1353.3398, 516.4384)
+
+[sub_resource type="Resource" id="Resource_x785r"]
+script = ExtResource("5_b4il4")
+position = Vector2(2539.447, 520.7868)
+
+[sub_resource type="Resource" id="Resource_ff5pv"]
+script = ExtResource("5_b4il4")
+position = Vector2(2551.848, 855.6119)
+
+[sub_resource type="Resource" id="Resource_6txdi"]
+script = ExtResource("5_b4il4")
+position = Vector2(-1116.8345, 874.53217)
+
+[sub_resource type="Resource" id="Resource_lrnv0"]
+script = ExtResource("5_b4il4")
+position = Vector2(-1107.3411, 501.4945)
+
+[sub_resource type="Resource" id="Resource_as84s"]
+script = ExtResource("6_rvcfa")
+_points = {
+0: SubResource("Resource_60ktv"),
+1: SubResource("Resource_ftkmv"),
+2: SubResource("Resource_x785r"),
+3: SubResource("Resource_ff5pv"),
+4: SubResource("Resource_6txdi"),
+5: SubResource("Resource_lrnv0")
+}
+_point_order = PackedInt32Array(0, 1, 2, 3, 4, 5)
+_constraints = {
+Vector2i(0, 5): 15
+}
+_next_key = 6
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_secea"]
+_surfaces = [{
+"aabb": AABB(-1116.8345, 501.4945, 0, 3668.6824, 373.03766, 1e-05),
+"attribute_data": PackedByteArray("/////wFyND9/1PQ+AXI0P3/U9D7/////5kupPzrk9j7mS6k/OuT2Pv////+KH6o/zM9KP4ofqj/Mz0o//////0npFL/oS08/SekUv+hLTz//////PqUTv9y+7T4+pRO/3L7tPg=="),
+"format": 34359742527,
+"index_count": 12,
+"index_data": PackedByteArray("AAABAAIAAAACAAMAAwAEAAQABAAAAAMA"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 5,
+"vertex_data": PackedByteArray("4CqpRA8cAUQAAAAAJ7ceRVsyAkQAAAAAkX0fRSnnVUQAAAAAtJqLxA+iWkQAAAAA6mqKxEy/+kMAAAAA/////////7//////////v/////////+//////////7//////////vw==")
+}]
+
+[sub_resource type="Resource" id="Resource_dl2rl"]
+script = ExtResource("7_xo3yk")
+texture = ExtResource("8_ektjc")
+mesh = SubResource("ArrayMesh_secea")
+z_index = -10
+
+[sub_resource type="Resource" id="Resource_pf523"]
+script = ExtResource("10_lccif")
+fill_textures = Array[Texture2D]([ExtResource("8_ektjc")])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_grmeo"]
+size = Vector2(310.5, 818)
+
+[node name="startarea" type="Node2D"]
+position = Vector2(79, 311)
+metadata/_edit_vertical_guides_ = [-799.0]
+
+[node name="player" parent="." instance=ExtResource("1_nhgac")]
+position = Vector2(2171, 458)
+scale = Vector2(3, 3)
+
+[node name="PhantomCamera2D" type="Node2D" parent="." node_paths=PackedStringArray("follow_target")]
+top_level = true
+position = Vector2(2250, 769)
+script = ExtResource("2_08f32")
+follow_mode = 2
+follow_target = NodePath("../player")
+tween_resource = SubResource("Resource_a3qjn")
+follow_damping = true
+metadata/_custom_type_script = "uid://bhexx6mj1xv3q"
+
+[node name="Camera2D" type="Camera2D" parent="PhantomCamera2D"]
+zoom = Vector2(1.5, 1.5)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="SS2D_Shape" type="Node2D" parent="StaticBody2D"]
+position = Vector2(-6, -3)
+script = ExtResource("4_3f72n")
+_points = SubResource("Resource_as84s")
+_meshes = Array[ExtResource("7_xo3yk")]([SubResource("Resource_dl2rl")])
+shape_material = SubResource("Resource_pf523")
+collision_polygon_node_path = NodePath("../CollisionPolygon2D2")
+metadata/_custom_type_script = "uid://dhdc4b8yddyej"
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(-1113.3411, 498.4945, 1347.3398, 513.4384, 2533.447, 517.7868, 2545.848, 852.6119, -1122.8345, 871.53217)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(-0.81817627, 517.7868, 1347.3398, 513.4384, 1512.4536, 514.0437, 2533.447, 517.7868, 2545.848, 852.6119, -1.7373047, 854.3834)
+
+[node name="ParallaxBackground3" type="ParallaxBackground" parent="."]
+layer = 1
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground3"]
+position = Vector2(84, 513)
+motion_mirroring = Vector2(1920, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground3/ParallaxLayer"]
+position = Vector2(385, -183)
+texture = ExtResource("11_gm00y")
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("12_ahj06")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(2382, 238)
+shape = SubResource("RectangleShape2D_grmeo")
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D"]
+position = Vector2(3037, 242)
+texture = ExtResource("13_htcqv")
+
+[node name="FadeLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="FadeLayer"]
+visible = false
+offset_right = 4162.0
+offset_bottom = 1304.0
+color = Color(0, 0, 0, 1)

@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://bct1y4f5n03ga"]
+
+[ext_resource type="Texture2D" uid="uid://7rhfa28a7qoc" path="res://levels-assets/startarea/bg/Vrstva 5.png" id="1_1rm0f"]
+
+[node name="Midbgvila" type="Node2D"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+texture_filter = 1
+motion_mirroring = Vector2(1920, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(703, 536)
+texture = ExtResource("1_1rm0f")

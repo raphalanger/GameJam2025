@@ -1,10 +1,10 @@
 [gd_scene load_steps=20 format=4 uid="uid://dblkmb64tbpcc"]
 
 [ext_resource type="PackedScene" uid="uid://c85oatttj4a6l" path="res://scenes/2d/test1/test.tscn" id="1_j2mns"]
-[ext_resource type="Texture2D" uid="uid://cgwailcqjjvgx" path="res://levels-assets/test/3d/Colorsheet Tree Normal.png" id="2_2v35t"]
+[ext_resource type="Texture2D" uid="uid://cgwailcqjjvgx" path="res://levels-assets/startarea/Colorsheet Tree Normal.png" id="2_2v35t"]
 [ext_resource type="Texture2D" uid="uid://cr4k6lth7lyuy" path="res://levels-assets/test/3d/T_Mountains_temperate_climate_32.png" id="3_ktqqa"]
 [ext_resource type="Texture2D" uid="uid://dbridh04wksen" path="res://levels-assets/test/back/2.png" id="4_7yhh0"]
-[ext_resource type="PackedScene" uid="uid://bl83ksaet7hsd" path="res://levels-assets/palaraxx/paralax.tscn" id="5_kbyni"]
+[ext_resource type="PackedScene" uid="uid://bl83ksaet7hsd" path="res://scenes/2d/vila/paralax.tscn" id="5_kbyni"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_xjn1k"]
 viewport_path = NodePath("SubViewport")

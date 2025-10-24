@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://cuih0po4sydxx"]
+[gd_scene load_steps=43 format=3 uid="uid://cuih0po4sydxx"]
 
 [ext_resource type="Script" uid="uid://d3w4svfesd1hr" path="res://Characters/Player/kid/character_body_2d.gd" id="1_0dupx"]
 [ext_resource type="Texture2D" uid="uid://c2kmp88g0gel5" path="res://Characters/Player/kid/idle/kid_idle0001.png" id="2_hvskx"]
@@ -286,8 +286,11 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_wvq0d"]
+
 [node name="player" type="CharacterBody2D" groups=["player"]]
 texture_filter = 1
+collision_layer = 17
 script = ExtResource("1_0dupx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -315,3 +318,9 @@ position = Vector2(-5.9604645e-08, -6)
 scale = Vector2(0.03478656, 0.03844506)
 sprite_frames = SubResource("SpriteFrames_423yf")
 animation = &"walk"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1, -15)
+shape = SubResource("CircleShape2D_wvq0d")

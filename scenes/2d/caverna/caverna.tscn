@@ -1,0 +1,165 @@
+[gd_scene load_steps=28 format=4 uid="uid://b7ib0f3id01pg"]
+
+[ext_resource type="PackedScene" uid="uid://57b8lcev61a7" path="res://scenes/2d/caverna/bg.tscn" id="1_ku8yu"]
+[ext_resource type="Texture2D" uid="uid://cp8revi4a1wfa" path="res://levels-assets/caverna/Plan 1.png" id="4_abli0"]
+[ext_resource type="Script" uid="uid://dhdc4b8yddyej" path="res://addons/rmsmartshape/shapes/shape.gd" id="5_63fc1"]
+[ext_resource type="Script" uid="uid://bwcf4pjgprn0k" path="res://addons/rmsmartshape/shapes/point.gd" id="6_brq5f"]
+[ext_resource type="Script" uid="uid://bo5f7qe27jfje" path="res://addons/rmsmartshape/shapes/point_array.gd" id="7_4nts2"]
+[ext_resource type="Script" uid="uid://llobjh5hvry" path="res://addons/rmsmartshape/shapes/mesh.gd" id="8_0grov"]
+[ext_resource type="Texture2D" uid="uid://d1faso81ntl8x" path="res://levels-assets/caverna/help-me.png" id="9_brq5f"]
+[ext_resource type="Script" uid="uid://cderpadh5alts" path="res://scenes/2d/vila/area_2d_2.gd" id="10_0grov"]
+[ext_resource type="Script" uid="uid://0lhxan4cqrc1" path="res://addons/rmsmartshape/materials/edge_material_metadata.gd" id="10_53vlx"]
+[ext_resource type="Script" uid="uid://nc5bfedvnpgm" path="res://addons/rmsmartshape/materials/shape_material.gd" id="11_87dxj"]
+[ext_resource type="Script" uid="uid://bhexx6mj1xv3q" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="11_brq5f"]
+[ext_resource type="Texture2D" uid="uid://csocpb168qnig" path="res://icon.svg" id="11_v26u4"]
+[ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="12_4nts2"]
+[ext_resource type="PackedScene" uid="uid://cuih0po4sydxx" path="res://Characters/Player/kid/player.tscn" id="12_brq5f"]
+
+[sub_resource type="Resource" id="Resource_60ktv"]
+script = ExtResource("6_brq5f")
+position = Vector2(-1107.3411, 501.4945)
+
+[sub_resource type="Resource" id="Resource_ftkmv"]
+script = ExtResource("6_brq5f")
+position = Vector2(1359.6167, 497.60785)
+
+[sub_resource type="Resource" id="Resource_x785r"]
+script = ExtResource("6_brq5f")
+position = Vector2(2548.305, 490.67023)
+
+[sub_resource type="Resource" id="Resource_ff5pv"]
+script = ExtResource("6_brq5f")
+position = Vector2(2551.848, 855.6119)
+
+[sub_resource type="Resource" id="Resource_6txdi"]
+script = ExtResource("6_brq5f")
+position = Vector2(-1116.8345, 874.53217)
+
+[sub_resource type="Resource" id="Resource_lrnv0"]
+script = ExtResource("6_brq5f")
+position = Vector2(-1107.3411, 501.4945)
+
+[sub_resource type="Resource" id="Resource_y1i2t"]
+script = ExtResource("7_4nts2")
+_points = {
+0: SubResource("Resource_60ktv"),
+1: SubResource("Resource_ftkmv"),
+2: SubResource("Resource_x785r"),
+3: SubResource("Resource_ff5pv"),
+4: SubResource("Resource_6txdi"),
+5: SubResource("Resource_lrnv0")
+}
+_point_order = PackedInt32Array(0, 1, 2, 3, 4, 5)
+_constraints = {
+Vector2i(0, 5): 15
+}
+_next_key = 6
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_secea"]
+_surfaces = [{
+"aabb": AABB(-1116.8345, 490.67023, 0, 3668.6824, 383.86194, 1e-05),
+"attribute_data": PackedByteArray("/////0FINT8p5+s+QUg1Pynn6z7/////E+OpPzGd6D4T46k/MZ3oPv////+KH6o/zM9KP4ofqj/Mz0o//////0npFL/oS08/SekUv+hLTz//////PqUTv9y+7T4+pRO/3L7tPg=="),
+"format": 34359742527,
+"index_count": 12,
+"index_data": PackedByteArray("AAABAAIAAAACAAMAAwAEAAQABAAAAAMA"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 5,
+"vertex_data": PackedByteArray("vPOpRM7N+EMAAAAA4UQfRcpV9UMAAAAAkX0fRSnnVUQAAAAAtJqLxA+iWkQAAAAA6mqKxEy/+kMAAAAA/////////7//////////v/////////+//////////7//////////vw==")
+}]
+
+[sub_resource type="Resource" id="Resource_dl2rl"]
+script = ExtResource("8_0grov")
+texture = ExtResource("9_brq5f")
+mesh = SubResource("ArrayMesh_secea")
+z_index = -10
+
+[sub_resource type="Resource" id="Resource_frd6p"]
+script = ExtResource("11_87dxj")
+fill_textures = Array[Texture2D]([ExtResource("9_brq5f")])
+
+[sub_resource type="Resource" id="Resource_0grov"]
+script = ExtResource("12_4nts2")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_brq5f"]
+size = Vector2(310.5, 818)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_53vlx"]
+size = Vector2(125.66672, 172)
+
+[node name="Caverna" type="Node2D"]
+
+[node name="ParallaxBackground" parent="." instance=ExtResource("1_ku8yu")]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="SS2D_Shape" type="Node2D" parent="StaticBody2D"]
+position = Vector2(674, 155)
+script = ExtResource("5_63fc1")
+_points = SubResource("Resource_y1i2t")
+_meshes = Array[ExtResource("8_0grov")]([SubResource("Resource_dl2rl")])
+shape_material = SubResource("Resource_frd6p")
+collision_polygon_node_path = NodePath("../CollisionPolygon2D2")
+metadata/_custom_type_script = "uid://dhdc4b8yddyej"
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(1995, 843)
+polygon = PackedVector2Array(-2428.341, -186.5055, 38.6167, -190.39215, 1227.3049, -197.32977, 1230.8479, 167.61188, -2437.8345, 186.53217)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(0, 145)
+polygon = PackedVector2Array(-428, 511, 1347.3398, 513.4384, 1412.5685, 513.91064, 2530, 522, 2545.848, 852.6119, -445, 894)
+
+[node name="player" parent="." instance=ExtResource("12_brq5f")]
+position = Vector2(83, 135)
+scale = Vector2(3, 3)
+
+[node name="ParallaxBackground2" type="ParallaxBackground" parent="."]
+layer = 5
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground2"]
+motion_mirroring = Vector2(1670, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground2/ParallaxLayer"]
+position = Vector2(875, 373)
+scale = Vector2(3, 3)
+texture = ExtResource("4_abli0")
+
+[node name="PhantomCamera2D" type="Node2D" parent="." node_paths=PackedStringArray("follow_target")]
+top_level = true
+position = Vector2(83, 135)
+script = ExtResource("11_brq5f")
+follow_mode = 2
+follow_target = NodePath("../player")
+tween_resource = SubResource("Resource_0grov")
+follow_damping = true
+metadata/_custom_type_script = "uid://bhexx6mj1xv3q"
+
+[node name="Camera2D" type="Camera2D" parent="PhantomCamera2D"]
+zoom = Vector2(1.5, 1.5)
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(-144, 257)
+shape = SubResource("RectangleShape2D_brq5f")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(3373, 299)
+shape = SubResource("RectangleShape2D_brq5f")
+
+[node name="Area2D2" type="Area2D" parent="."]
+position = Vector2(1667, 759)
+scale = Vector2(3, 3)
+script = ExtResource("10_0grov")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(373, -108.333336)
+shape = SubResource("RectangleShape2D_53vlx")
+
+[node name="Icon" type="Sprite2D" parent="Area2D2"]
+position = Vector2(371.3333, -105.33333)
+scale = Vector2(0.4010415, 0.42447925)
+texture = ExtResource("11_v26u4")

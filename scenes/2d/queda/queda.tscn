@@ -1,0 +1,107 @@
+[gd_scene load_steps=10 format=3 uid="uid://butidav718uia"]
+
+[ext_resource type="Texture2D" uid="uid://pdiwb7clg0bl" path="res://levels-assets/queda/bg.png" id="1_cxtbu"]
+[ext_resource type="Texture2D" uid="uid://dw55wvjbklxe8" path="res://levels-assets/queda/rock3.png" id="2_4wthu"]
+[ext_resource type="Script" uid="uid://bhexx6mj1xv3q" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="2_6515o"]
+[ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="3_cxtbu"]
+[ext_resource type="PackedScene" uid="uid://cuih0po4sydxx" path="res://Characters/Player/kid/player.tscn" id="4_4wthu"]
+
+[sub_resource type="Resource" id="Resource_rvb1d"]
+script = ExtResource("3_cxtbu")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6515o"]
+size = Vector2(310.5, 2070)
+
+[sub_resource type="GDScript" id="GDScript_6515o"]
+script/source = "extends Area2D
+
+@export var next_scene_path: String = \"res://scenes/2d/caverna/caverna.tscn\"
+@export var fade_time: float = 1.0
+
+@onready var fade_rect := get_viewport().get_node(\"FadeLayer/ColorRect\")
+var inside_bodies := []
+
+func _ready():
+	connect(\"body_entered\", Callable(self, \"_on_body_entered\"))
+	connect(\"body_exited\", Callable(self, \"_on_body_exited\"))
+
+func _on_body_entered(body):
+	if body.name == \"player\" and not body in inside_bodies:
+		inside_bodies.append(body)
+		await fade_out()
+		get_tree().change_scene_to_file(next_scene_path)
+
+func _on_body_exited(body):
+	if body in inside_bodies:
+		inside_bodies.erase(body)
+
+func fade_out():
+	if not fade_rect:
+		push_warning(\"ColorRect de fade não encontrado dentro do Viewport.\")
+		return
+	fade_rect.visible = true
+	var tween = create_tween()
+	tween.tween_property(fade_rect, \"modulate:a\", 1.0, fade_time)
+	await tween.finished
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cxtbu"]
+size = Vector2(1914.5, 265)
+
+[node name="Queda" type="Node2D"]
+
+[node name="falling" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="falling"]
+
+[node name="Sprite2D" type="Sprite2D" parent="falling/ParallaxLayer"]
+position = Vector2(485.47406, 1243.8417)
+rotation = 1.5498524
+scale = Vector2(3.4470775, 4.0520334)
+texture = ExtResource("1_cxtbu")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="falling"]
+
+[node name="Sprite2D" type="Sprite2D" parent="falling/ParallaxLayer2"]
+position = Vector2(469.77127, 1140.1799)
+rotation = 1.5498524
+scale = Vector2(3.2304778, 4.0019283)
+texture = ExtResource("2_4wthu")
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="falling"]
+
+[node name="PhantomCamera2D" type="Node2D" parent="." node_paths=PackedStringArray("follow_target")]
+top_level = true
+position = Vector2(155, 47)
+script = ExtResource("2_6515o")
+follow_mode = 2
+follow_target = NodePath("../player")
+tween_resource = SubResource("Resource_rvb1d")
+follow_damping = true
+metadata/_custom_type_script = "uid://bhexx6mj1xv3q"
+
+[node name="Camera2D" type="Camera2D" parent="PhantomCamera2D"]
+zoom = Vector2(1.5, 1.5)
+
+[node name="player" parent="." instance=ExtResource("4_4wthu")]
+position = Vector2(155, 47)
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(-315, 1024)
+shape = SubResource("RectangleShape2D_6515o")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(1305, 1034)
+shape = SubResource("RectangleShape2D_6515o")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(1305, 1034)
+script = SubResource("GDScript_6515o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-812.25, 915.5)
+shape = SubResource("RectangleShape2D_cxtbu")

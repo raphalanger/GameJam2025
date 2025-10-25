@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://57b8lcev61a7"]
+
+[ext_resource type="Texture2D" uid="uid://4u3m7yab4x1b" path="res://levels-assets/startarea/bg/1.png" id="1_5v88a"]
+[ext_resource type="Texture2D" uid="uid://cqdmw4njewcn6" path="res://levels-assets/caverna/Plan 5.png" id="1_jqqtl"]
+
+[node name="ParallaxBackground" type="ParallaxBackground"]
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer2"]
+position = Vector2(1445.9999, 686.99994)
+scale = Vector2(5, 5)
+texture = ExtResource("1_5v88a")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2(1670, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer"]
+position = Vector2(872.00006, 357)
+scale = Vector2(3, 3)
+texture = ExtResource("1_jqqtl")

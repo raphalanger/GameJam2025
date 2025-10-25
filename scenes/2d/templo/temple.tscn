@@ -1,46 +1,50 @@
-[gd_scene load_steps=30 format=4 uid="uid://yfmmuu7whx4o"]
+[gd_scene load_steps=31 format=4 uid="uid://du8ycq740s52a"]
 
-[ext_resource type="Texture2D" uid="uid://7x2dfltuqd1e" path="res://levels-assets/vila/bg/Foreground.png" id="1_7fp63"]
-[ext_resource type="Script" uid="uid://dhdc4b8yddyej" path="res://addons/rmsmartshape/shapes/shape.gd" id="3_4swxn"]
-[ext_resource type="PackedScene" uid="uid://cuih0po4sydxx" path="res://Characters/Player/kid/player.tscn" id="3_ojakn"]
-[ext_resource type="Script" uid="uid://bwcf4pjgprn0k" path="res://addons/rmsmartshape/shapes/point.gd" id="4_8gef2"]
-[ext_resource type="Script" uid="uid://bo5f7qe27jfje" path="res://addons/rmsmartshape/shapes/point_array.gd" id="5_4brqi"]
-[ext_resource type="Script" uid="uid://llobjh5hvry" path="res://addons/rmsmartshape/shapes/mesh.gd" id="6_cy4oq"]
-[ext_resource type="Texture2D" uid="uid://sh8qptfjb30b" path="res://levels-assets/vila/test.png" id="7_a3qjn"]
-[ext_resource type="Script" uid="uid://0lhxan4cqrc1" path="res://addons/rmsmartshape/materials/edge_material_metadata.gd" id="8_x53qj"]
-[ext_resource type="Script" uid="uid://nc5bfedvnpgm" path="res://addons/rmsmartshape/materials/shape_material.gd" id="9_wnvdw"]
-[ext_resource type="Script" uid="uid://bhexx6mj1xv3q" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="10_4brqi"]
-[ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="11_cy4oq"]
-[ext_resource type="Texture2D" uid="uid://csywbvwpopdjp" path="res://levels-assets/vila/bg/Ground.png" id="12_cy4oq"]
-[ext_resource type="Texture2D" uid="uid://csocpb168qnig" path="res://icon.svg" id="13_a3qjn"]
-[ext_resource type="Script" uid="uid://cderpadh5alts" path="res://scenes/2d/vila/area_2d_2.gd" id="13_x53qj"]
+[ext_resource type="PackedScene" uid="uid://cuih0po4sydxx" path="res://Characters/Player/kid/player.tscn" id="1_rr4s5"]
+[ext_resource type="Texture2D" uid="uid://7x2dfltuqd1e" path="res://levels-assets/vila/bg/Foreground.png" id="2_eopwb"]
+[ext_resource type="Texture2D" uid="uid://c78txjev2efhj" path="res://levels-assets/temple/iamsotired.png" id="3_804ka"]
+[ext_resource type="Script" uid="uid://dhdc4b8yddyej" path="res://addons/rmsmartshape/shapes/shape.gd" id="3_ix5gj"]
+[ext_resource type="Script" uid="uid://bwcf4pjgprn0k" path="res://addons/rmsmartshape/shapes/point.gd" id="4_uppi5"]
+[ext_resource type="Script" uid="uid://bo5f7qe27jfje" path="res://addons/rmsmartshape/shapes/point_array.gd" id="5_je8it"]
+[ext_resource type="Script" uid="uid://llobjh5hvry" path="res://addons/rmsmartshape/shapes/mesh.gd" id="6_4uc74"]
+[ext_resource type="Texture2D" uid="uid://sh8qptfjb30b" path="res://levels-assets/vila/test.png" id="7_6j6v1"]
+[ext_resource type="Script" uid="uid://0lhxan4cqrc1" path="res://addons/rmsmartshape/materials/edge_material_metadata.gd" id="8_e707b"]
+[ext_resource type="Script" uid="uid://nc5bfedvnpgm" path="res://addons/rmsmartshape/materials/shape_material.gd" id="9_yq0ea"]
+[ext_resource type="Script" uid="uid://bhexx6mj1xv3q" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="10_45w41"]
+[ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="11_2i2ot"]
+[ext_resource type="Texture2D" uid="uid://csywbvwpopdjp" path="res://levels-assets/vila/bg/Ground.png" id="12_axusx"]
+[ext_resource type="Script" uid="uid://cderpadh5alts" path="res://scenes/2d/vila/area_2d_2.gd" id="13_edlxj"]
+[ext_resource type="Texture2D" uid="uid://c1ggkbghhc4rq" path="res://levels-assets/temple/haha.png" id="14_f23ky"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x53qj"]
+size = Vector2(458, 544)
 
 [sub_resource type="Resource" id="Resource_60ktv"]
-script = ExtResource("4_8gef2")
+script = ExtResource("4_uppi5")
 position = Vector2(-1107.3411, 501.4945)
 
 [sub_resource type="Resource" id="Resource_ftkmv"]
-script = ExtResource("4_8gef2")
+script = ExtResource("4_uppi5")
 position = Vector2(1359.6167, 497.60785)
 
 [sub_resource type="Resource" id="Resource_x785r"]
-script = ExtResource("4_8gef2")
+script = ExtResource("4_uppi5")
 position = Vector2(2548.305, 490.67023)
 
 [sub_resource type="Resource" id="Resource_ff5pv"]
-script = ExtResource("4_8gef2")
+script = ExtResource("4_uppi5")
 position = Vector2(2551.848, 855.6119)
 
 [sub_resource type="Resource" id="Resource_6txdi"]
-script = ExtResource("4_8gef2")
+script = ExtResource("4_uppi5")
 position = Vector2(-1116.8345, 874.53217)
 
 [sub_resource type="Resource" id="Resource_lrnv0"]
-script = ExtResource("4_8gef2")
+script = ExtResource("4_uppi5")
 position = Vector2(-1107.3411, 501.4945)
 
 [sub_resource type="Resource" id="Resource_as84s"]
-script = ExtResource("5_4brqi")
+script = ExtResource("5_je8it")
 _points = {
 0: SubResource("Resource_60ktv"),
 1: SubResource("Resource_ftkmv"),
@@ -69,22 +73,25 @@ _surfaces = [{
 }]
 
 [sub_resource type="Resource" id="Resource_dl2rl"]
-script = ExtResource("6_cy4oq")
-texture = ExtResource("7_a3qjn")
+script = ExtResource("6_4uc74")
+texture = ExtResource("7_6j6v1")
 mesh = SubResource("ArrayMesh_secea")
 z_index = -10
 
 [sub_resource type="Resource" id="Resource_pf523"]
-script = ExtResource("9_wnvdw")
-fill_textures = Array[Texture2D]([ExtResource("7_a3qjn")])
+script = ExtResource("9_yq0ea")
+fill_textures = Array[Texture2D]([ExtResource("7_6j6v1")])
 
 [sub_resource type="Resource" id="Resource_a3qjn"]
-script = ExtResource("11_cy4oq")
+script = ExtResource("11_2i2ot")
 
-[sub_resource type="GDScript" id="GDScript_x53qj"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cy4oq"]
+size = Vector2(310.5, 818)
+
+[sub_resource type="GDScript" id="GDScript_f23ky"]
 script/source = "extends Area2D
 
-@export var next_scene_path: String = \"res://scenes/2d/templo/temple.tscn\"
+@export var next_scene_path: String = \"res://scenes/2d/queda/queda.tscn\"
 @export var fade_time: float = 1.0
 
 @onready var fade_rect := get_viewport().get_node(\"FadeLayer/ColorRect\")
@@ -114,19 +121,39 @@ func fade_out():
 	await tween.finished
 "
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_wnvdw"]
-size = Vector2(310.5, 818)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_804ka"]
+size = Vector2(2446.25, 351)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_x53qj"]
-size = Vector2(458, 544)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_cy4oq"]
-size = Vector2(310.5, 818)
-
-[node name="Vila1" type="Node2D"]
+[node name="temple" type="Node2D"]
 position = Vector2(5, 202)
 
-[node name="player" parent="." instance=ExtResource("3_ojakn")]
+[node name="Area2D2" type="Area2D" parent="."]
+position = Vector2(528, 208)
+script = ExtResource("13_edlxj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(259, 80)
+shape = SubResource("RectangleShape2D_x53qj")
+
+[node name="Haha" type="Sprite2D" parent="Area2D2"]
+texture_filter = 1
+position = Vector2(259.00006, 184.00003)
+rotation = 3.1415927
+scale = Vector2(5, 5)
+texture = ExtResource("14_f23ky")
+
+[node name="Haha2" type="Sprite2D" parent="Area2D2"]
+texture_filter = 1
+position = Vector2(256.00018, 257)
+scale = Vector2(5, 5)
+texture = ExtResource("14_f23ky")
+
+[node name="Iamsotired" type="Sprite2D" parent="Area2D2"]
+position = Vector2(260, 63.000008)
+scale = Vector2(0.08972773, 0.108333305)
+texture = ExtResource("3_804ka")
+
+[node name="player" parent="." instance=ExtResource("1_rr4s5")]
 position = Vector2(213, 471)
 scale = Vector2(3, 3)
 
@@ -140,30 +167,27 @@ motion_mirroring = Vector2(1270, 0)
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 position = Vector2(641, 174)
 scale = Vector2(0.6648438, 0.649537)
-texture = ExtResource("1_7fp63")
+texture = ExtResource("2_eopwb")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="SS2D_Shape" type="Node2D" parent="StaticBody2D"]
 position = Vector2(1115, 15)
-script = ExtResource("3_4swxn")
+script = ExtResource("3_ix5gj")
 _points = SubResource("Resource_as84s")
-_meshes = Array[ExtResource("6_cy4oq")]([SubResource("Resource_dl2rl")])
+_meshes = Array[ExtResource("6_4uc74")]([SubResource("Resource_dl2rl")])
 shape_material = SubResource("Resource_pf523")
-collision_polygon_node_path = NodePath("../CollisionPolygon2D2")
+collision_polygon_node_path = NodePath("../CollisionPolygon2D")
 metadata/_custom_type_script = "uid://dhdc4b8yddyej"
 
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
-position = Vector2(2449, 693)
-polygon = PackedVector2Array(-2441.341, -176.5055, 25.6167, -180.39215, 1214.3049, -187.32977, 1217.8479, 177.61188, -2450.8345, 196.53217)
-
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PackedVector2Array(-428, 511, 1347.3398, 513.4384, 1412.5685, 513.91064, 2530, 522, 2545.848, 852.6119, -445, 894)
+position = Vector2(-403, -1234)
+polygon = PackedVector2Array(7.6589355, 516.4945, 2474.6167, 512.60785, 3663.305, 505.67023, 3666.848, 870.6119, -1.8344727, 889.53217)
 
 [node name="PhantomCamera2D" type="Node2D" parent="." node_paths=PackedStringArray("follow_target")]
 top_level = true
 position = Vector2(218, 673)
-script = ExtResource("10_4brqi")
+script = ExtResource("10_45w41")
 follow_mode = 2
 follow_target = NodePath("../player")
 tween_resource = SubResource("Resource_a3qjn")
@@ -182,7 +206,7 @@ motion_mirroring = Vector2(1920, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground2/ParallaxLayer"]
 position = Vector2(959, 62)
-texture = ExtResource("12_cy4oq")
+texture = ExtResource("12_axusx")
 
 [node name="FadeLayer" type="CanvasLayer" parent="."]
 
@@ -195,28 +219,21 @@ offset_right = 0.25585938
 offset_bottom = -0.048095703
 color = Color(0, 0, 0, 1)
 
-[node name="Area2D" type="Area2D" parent="."]
-position = Vector2(783, 291)
-script = SubResource("GDScript_x53qj")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(1613, -59)
-shape = SubResource("RectangleShape2D_wnvdw")
-
-[node name="Area2D2" type="Area2D" parent="."]
-position = Vector2(528, 208)
-script = ExtResource("13_x53qj")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
-position = Vector2(259, 80)
-shape = SubResource("RectangleShape2D_x53qj")
-
-[node name="Icon" type="Sprite2D" parent="Area2D2"]
-position = Vector2(255, 83)
-texture = ExtResource("13_a3qjn")
-
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
 position = Vector2(-30, 238)
 shape = SubResource("RectangleShape2D_cy4oq")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(2398, 222)
+shape = SubResource("RectangleShape2D_cy4oq")
+
+[node name="Area2D" type="Area2D" parent="."]
+script = SubResource("GDScript_f23ky")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1316, 948)
+shape = SubResource("RectangleShape2D_804ka")

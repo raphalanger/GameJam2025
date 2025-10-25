@@ -10,7 +10,6 @@
 [ext_resource type="Script" uid="uid://nc5bfedvnpgm" path="res://addons/rmsmartshape/materials/shape_material.gd" id="8_yjglb"]
 [ext_resource type="Script" uid="uid://bhexx6mj1xv3q" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="9_hptng"]
 [ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="10_wat5u"]
-[ext_resource type="Script" uid="uid://pl0lgs6qv5dv" path="res://scenes/2d/test1/area_2d.gd" id="12_0d8oe"]
 [ext_resource type="Texture2D" uid="uid://csywbvwpopdjp" path="res://levels-assets/vila/bg/Ground.png" id="12_vmnn0"]
 [ext_resource type="Texture2D" uid="uid://7x2dfltuqd1e" path="res://levels-assets/vila/bg/Foreground.png" id="13_0d8oe"]
 
@@ -80,6 +79,39 @@ z_index = -10
 script = ExtResource("8_yjglb")
 fill_textures = Array[Texture2D]([ExtResource("6_men12")])
 
+[sub_resource type="GDScript" id="GDScript_vmnn0"]
+script/source = "extends Area2D
+
+@export var next_scene_path: String = \"res://scenes/3d/vila/vila.tscn\"
+@export var fade_time: float = 1.0
+
+@onready var fade_rect := get_viewport().get_node(\"FadeLayer/ColorRect\")
+var inside_bodies := []
+
+func _ready():
+	connect(\"body_entered\", Callable(self, \"_on_body_entered\"))
+	connect(\"body_exited\", Callable(self, \"_on_body_exited\"))
+
+func _on_body_entered(body):
+	if body.name == \"player\" and not body in inside_bodies:
+		inside_bodies.append(body)
+		await fade_out()
+		get_tree().change_scene_to_file(next_scene_path)
+
+func _on_body_exited(body):
+	if body in inside_bodies:
+		inside_bodies.erase(body)
+
+func fade_out():
+	if not fade_rect:
+		push_warning(\"ColorRect de fade não encontrado dentro do Viewport.\")
+		return
+	fade_rect.visible = true
+	var tween = create_tween()
+	tween.tween_property(fade_rect, \"modulate:a\", 1.0, fade_time)
+	await tween.finished
+"
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_grmeo"]
 size = Vector2(310.5, 818)
 
@@ -133,7 +165,7 @@ position = Vector2(385, -183)
 texture = ExtResource("12_vmnn0")
 
 [node name="Area2D" type="Area2D" parent="."]
-script = ExtResource("12_0d8oe")
+script = SubResource("GDScript_vmnn0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(2382, 238)

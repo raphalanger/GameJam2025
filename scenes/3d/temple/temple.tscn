@@ -1,0 +1,101 @@
+[gd_scene load_steps=12 format=3 uid="uid://byr7g2pfl1lyi"]
+
+[ext_resource type="Script" uid="uid://clvqix3840f7o" path="res://scenes/3d/vila/vila.gd" id="1_wdl0r"]
+[ext_resource type="PackedScene" uid="uid://du8ycq740s52a" path="res://scenes/2d/templo/temple.tscn" id="2_u0cix"]
+[ext_resource type="PackedScene" uid="uid://dpuks2fw0e26s" path="res://scenes/2d/vila/bg/bg.vila.tscn" id="3_n1vrg"]
+[ext_resource type="PackedScene" uid="uid://cqw4fl22xkwtt" path="res://scenes/2d/vila/bg/midbgvila.tscn" id="4_wk3p3"]
+[ext_resource type="Script" uid="uid://csjccrhj5wnx7" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="9_lj70t"]
+[ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="10_rcifu"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_v0nkw"]
+viewport_path = NodePath("bg/bg")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_ioe3j"]
+viewport_path = NodePath("bg/midbg")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_fys1y"]
+viewport_path = NodePath("front/front")
+
+[sub_resource type="Resource" id="Resource_fys1y"]
+script = ExtResource("10_rcifu")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_4xfs5"]
+viewport_path = NodePath("Control/SubViewport")
+
+[node name="temple" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.752586, 10.093153, 2.7006912)
+script = ExtResource("1_wdl0r")
+
+[node name="front" type="Node2D" parent="."]
+
+[node name="front" type="SubViewport" parent="front"]
+transparent_bg = true
+size = Vector2i(2520, 900)
+
+[node name="temple" parent="front/front" instance=ExtResource("2_u0cix")]
+
+[node name="bg" type="Node2D" parent="."]
+
+[node name="bg" type="SubViewport" parent="bg"]
+size = Vector2i(2520, 1220)
+
+[node name="Bg_vila" parent="bg/bg" instance=ExtResource("3_n1vrg")]
+
+[node name="midbg" type="SubViewport" parent="bg"]
+transparent_bg = true
+size = Vector2i(2520, 1220)
+
+[node name="midbg" type="Node2D" parent="bg/midbg"]
+
+[node name="Midbgvila" parent="bg/midbg/midbg" instance=ExtResource("4_wk3p3")]
+
+[node name="2d" type="Node3D" parent="."]
+
+[node name="bg" type="Sprite3D" parent="2d"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 1.4990473, 0.06689739, 9.19109)
+texture = SubResource("ViewportTexture_v0nkw")
+
+[node name="midbg" type="Sprite3D" parent="2d"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9059534, 1.0184231, -3.4407392)
+texture = SubResource("ViewportTexture_ioe3j")
+
+[node name="front" type="Sprite3D" parent="2d"]
+transform = Transform3D(-0.99974966, 0, -0.022373153, 0, 1, 0, 0.022373153, 0, -0.99974966, 0.33729362, -0.96872425, -10.741171)
+texture = SubResource("ViewportTexture_fys1y")
+
+[node name="3d" type="Node3D" parent="."]
+
+[node name="light" type="Node3D" parent="."]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="light"]
+transform = Transform3D(0.8864622, 0.20163628, 0.4165664, -0.46280098, 0.3862199, 0.7979032, 0, -0.9000984, 0.4356868, 16.549854, 19.321562, -7.3207283)
+
+[node name="camera" type="Node3D" parent="."]
+
+[node name="PhantomCamera3D" type="Node3D" parent="camera" node_paths=PackedStringArray("follow_target")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.415293, 9.124429, -8.04048)
+top_level = true
+script = ExtResource("9_lj70t")
+follow_mode = 2
+follow_target = NodePath("../../2d/front")
+tween_resource = SubResource("Resource_fys1y")
+metadata/_custom_type_script = "uid://csjccrhj5wnx7"
+
+[node name="Camera3D" type="Camera3D" parent="camera/PhantomCamera3D"]
+transform = Transform3D(-0.9999035, 0, 0.013892354, 0, 1, 0, -0.013892354, 0, -0.9999035, 0.5368252, 1.2892036, -23.154982)
+fov = 16.0
+
+[node name="Sprite3D" type="Sprite3D" parent="camera/PhantomCamera3D/Camera3D"]
+transform = Transform3D(0.9990852, 0, 0.04276497, 0, 1, 0, -0.04276497, 0, 0.9990852, 0.84495735, -0.5832586, -19.957077)
+texture = SubResource("ViewportTexture_4xfs5")
+
+[node name="FadeLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="FadeLayer"]
+visible = false
+anchors_preset = -1
+anchor_right = 3.3750002
+anchor_bottom = 2.792
+offset_right = -0.00024414063
+offset_bottom = -0.21606445
+color = Color(0, 0, 0, 1)

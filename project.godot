@@ -69,7 +69,7 @@ audio/channel_defaults={
 "volume": 0.0
 }
 }
-layout/style_list=["res://cutscenes/styke2.tres", "res://cutscenes/ahhhhhhhh.tres"]
+layout/style_list=["res://cutscenes/styke2.tres"]
 layout/default_style=""
 glossary/default_case_sensitive=true
 variables={}
